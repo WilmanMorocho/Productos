@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Cliente - Café Aroma</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Panel de Cliente</h1>
+        <nav class="admin-nav">
+            <a href="home.html" class="nav-link">Inicio</a>
+            <button id="logout-btn" class="logout-btn">Cerrar Sesión</button>
+        </nav>
+    </header>
+    
+    <main class="client-main">
+        <div class="welcome-panel">
+            <h2>Bienvenido, <span id="client-name">Cliente</span></h2>
+            <p>Desde aquí puedes gestionar tus pedidos y ver el historial de compras.</p>
+        </div>
+        
+        <div class="client-dashboard">
+            <div class="dashboard-card">
+                <h3>Mis Pedidos</h3>
+                <p>Visualiza y gestiona tus pedidos actuales.</p>
+                <a href="pedidos.html" class="client-btn">Ver Pedidos</a>
+            </div>
+            
+            <div class="dashboard-card">
+                <h3>Historial de Compras</h3>
+                <p>Revisa las compras que has realizado anteriormente.</p>
+                <a href="historial.html" class="client-btn">Ver Historial</a>
+            </div>
+            
+            <div class="dashboard-card">
+                <h3>Mi Perfil</h3>
+                <p>Actualiza tu información personal.</p>
+                <a href="perfil.html" class="client-btn">Editar Perfil</a>
+            </div>
+            
+            <div class="dashboard-card">
+                <h3>Tienda</h3>
+                <p>Explora nuestros productos y realiza nuevas compras.</p>
+                <a href="tienda.html" class="client-btn">Ir a la Tienda</a>
+            </div>
+
+            <div class="dashboard-card danger-card">
+                <h3>Eliminar Cuenta</h3>
+                <p>Esta acción no se puede deshacer. Se perderán todos tus datos.</p>
+                <button id="delete-account-btn" class="danger-btn">Eliminar mi cuenta</button>
+            </div>
+        </div>
+    </main>
+    
+    <script src="js/auth.js"></script>
+    <script src="js/cliente.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Pedidos - Café Aroma</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Mis Pedidos</h1>
+        <nav class="admin-nav">
+            <a href="cliente.html" class="nav-link">Volver al Panel</a>
+            <button id="logout-btn" class="logout-btn">Cerrar Sesión</button>
+        </nav>
+    </header>
+    
+    <main class="client-page-main">
+        <div class="page-container">
+            <h2>Pedidos Activos</h2>
+            
+            <div id="active-orders">
+                <!-- Los pedidos se cargarán aquí -->
+            </div>
+            
+            <div id="no-orders-message" class="message-box">
+                <p>No tienes pedidos activos en este momento.</p>
+                <a href="tienda.html" class="client-btn">Ir a la Tienda</a>
+            </div>
+        </div>
+    </main>
+    
+    <script src="js/auth.js"></script>
+    <script src="js/pedidos.js"></script>
+</body>
+</html>

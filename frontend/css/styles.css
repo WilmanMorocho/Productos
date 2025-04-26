@@ -1,0 +1,1188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #F8F1E9; /* Blanco Hueso como fondo principal */
+    color: #3C2F2F; /* Marrón Oscuro para texto */
+}
+
+header {
+    background-color: #3C2F2F; /* Marrón Oscuro para el encabezado */
+    color: #F8F1E9; /* Blanco Hueso para el texto del encabezado */
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-bottom: 2rem;
+}
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+}
+
+.form-section, .products-section {
+    background-color: #F5E6CC; /* Beige Crema para fondos de secciones */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(60, 47, 47, 0.15); /* Sombra con Marrón Oscuro */
+    padding: 1.5rem;
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+    color: #3C2F2F; /* Marrón Oscuro para títulos */
+    border-bottom: 2px solid #8B6F47; /* Borde con Marrón Café Claro */
+    padding-bottom: 0.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #8B6F47; /* Borde con Marrón Café Claro */
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #F8F1E9; /* Blanco Hueso para fondos de input */
+}
+
+button {
+    background-color: #8B6F47; /* Marrón Café Claro para botones normales */
+    color: #F8F1E9; /* Blanco Hueso para texto de botones */
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #3C2F2F; /* Marrón Oscuro al pasar el cursor */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #8B6F47; /* Borde con Marrón Café Claro */
+}
+
+th {
+    background-color: #8B6F47; /* Marrón Café Claro para encabezados de tabla */
+    color: #F8F1E9; /* Blanco Hueso para texto de encabezados */
+    font-weight: 600;
+}
+
+.action-btn {
+    margin-right: 0.5rem;
+}
+
+.edit-btn {
+    background-color: #4A7043; /* Verde Olivo para botón de editar */
+}
+
+.delete-btn {
+    background-color: #3C2F2F; /* Marrón Oscuro para botón de eliminar */
+}
+
+.edit-btn:hover {
+    background-color: #3a5a36; /* Verde Olivo más oscuro al pasar el cursor */
+}
+
+.delete-btn:hover {
+    background-color: #2a2121; /* Marrón Oscuro más oscuro al pasar el cursor */
+}
+
+#cancel-btn {
+    background-color: #8B6F47; /* Marrón Café Claro para botón de cancelar */
+    opacity: 0.8;
+}
+
+#cancel-btn:hover {
+    background-color: #6e5838; /* Marrón Café Claro más oscuro al pasar el cursor */
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Estilos para la página de login */
+.login-body {
+    background-color: #3C2F2F;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.login-box {
+    background-color: #F5E6CC;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.login-box h1 {
+    color: #3C2F2F;
+    text-align: center;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #8B6F47;
+    padding-bottom: 10px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background-color: #4A7043;
+}
+
+.login-btn:hover {
+    background-color: #3a5a36;
+}
+
+.error-message {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    display: none;
+}
+
+.error-message:not(:empty) {
+    display: block;
+}
+
+/* Estilos para el panel de administración */
+.admin-nav {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.logout-btn {
+    background-color: #3C2F2F;
+    color: #F8F1E9;
+}
+
+.logout-btn:hover {
+    background-color: #2a2121;
+}
+
+.admin-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px);
+}
+
+.admin-actions {
+    background-color: #F5E6CC;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(60, 47, 47, 0.15);
+    width: 100%;
+    max-width: 500px;
+}
+
+.admin-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.admin-btn {
+    background-color: #8B6F47;
+    color: #F8F1E9;
+    border: none;
+    padding: 15px;
+    border-radius: 4px;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-btn:hover {
+    background-color: #3C2F2F;
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #F5E6CC;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.close {
+    color: #8B6F47;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #3C2F2F;
+}
+
+/* Estilos para la navegación principal */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-link {
+    color: #F8F1E9;
+    text-decoration: none;
+    margin-right: 20px;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #F5E6CC;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.auth-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.login {
+    background-color: transparent;
+    border: 1px solid #F8F1E9;
+    color: #F8F1E9;
+}
+
+.register {
+    background-color: #4A7043;
+    color: #F8F1E9;
+}
+
+.login:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.register:hover {
+    background-color: #3a5a36;
+}
+
+/* Estilos para la página de inicio */
+.home-main {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-section {
+    background-color: #3C2F2F;
+    color: #F8F1E9;
+    padding: 80px 20px;
+    text-align: center;
+    background-image: linear-gradient(rgba(60, 47, 47, 0.8), rgba(60, 47, 47, 0.8)), url('../assets/coffee-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    border-bottom: none;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #4A7043;
+    color: #F8F1E9;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #3a5a36;
+}
+
+.about-section, .featured-products {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-text, .about-image {
+    flex: 1;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.view-all {
+    display: block;
+    text-align: center;
+    margin-top: 40px;
+    color: #8B6F47;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #3C2F2F;
+    color: #F8F1E9;
+    padding: 40px 20px 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo, .footer-links, .footer-contact {
+    margin-bottom: 30px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links a {
+    color: #F5E6CC;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #8B6F47;
+    padding-top: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Estilos para la página de Cliente */
+.client-main {
+    display: block;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.welcome-panel {
+    background-color: #F5E6CC;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(60, 47, 47, 0.15);
+    margin-bottom: 30px;
+}
+
+.client-dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.dashboard-card {
+    background-color: #F5E6CC;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(60, 47, 47, 0.15);
+}
+
+.dashboard-card h3 {
+    color: #3C2F2F;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.dashboard-card p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.client-btn {
+    display: inline-block;
+    background-color: #8B6F47;
+    color: #F8F1E9;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.client-btn:hover {
+    background-color: #3C2F2F;
+}
+
+/* Estilos para formulario de registro */
+.form-link {
+    text-align: center;
+    margin-top: 15px;
+    color: #3C2F2F;
+}
+
+.form-link a {
+    color: #4A7043;
+    text-decoration: none;
+}
+
+.form-link a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para tarjeta de eliminar cuenta */
+.danger-card {
+    border-left: 4px solid #B22222;
+    background-color: #FFF0F0;
+}
+
+.danger-btn {
+    background-color: #B22222;
+    color: white;
+}
+
+.danger-btn:hover {
+    background-color: #8B0000;
+}
+
+/* Estilos para gestión de usuarios */
+.users-main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.users-container {
+    background-color: #F5E6CC;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(60, 47, 47, 0.15);
+    padding: 1.5rem;
+}
+
+.disabled-btn {
+    color: #999;
+    font-style: italic;
+}
+
+/* Estilos para páginas de cliente */
+.client-page-main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-container {
+    background-color: #F5E6CC;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(60, 47, 47, 0.15);
+    padding: 1.5rem;
+}
+
+.message-box {
+    background-color: rgba(248, 241, 233, 0.7);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* Estilos para la tienda */
+.store-main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 20px;
+}
+
+.filters {
+    background-color: #F5E6CC;
+    padding: 20px;
+    border-radius: 8px;
+    align-self: start;
+    position: sticky;
+    top: 20px;
+}
+
+.filter-group {
+    margin-bottom: 20px;
+}
+
+.filter-group h3 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.price-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.products {
+    background-color: #F5E6CC;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.product-card {
+    background-color: #F8F1E9;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    height: 180px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.product-info h3 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.product-price {
+    font-weight: bold;
+    color: #8B6F47;
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    padding: 8px;
+    background-color: #4A7043;
+}
+
+.cart-container {
+    margin-right: 15px;
+}
+
+.cart-btn {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #F8F1E9;
+}
+
+.cart-icon {
+    margin-right: 5px;
+}
+
+#cart-count {
+    background-color: #4A7043;
+    color: white;
+    font-size: 0.8rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-price {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.cart-item-total {
+    font-weight: bold;
+    margin: 0 15px;
+}
+
+.remove-item-btn {
+    background-color: #B22222;
+    color: white;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-total {
+    text-align: right;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 2px solid #8B6F47;
+    font-size: 1.2rem;
+}
+
+/* Estilos para perfil */
+.profile-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Estilos para historial y pedidos */
+.order-card, .history-card {
+    background-color: #F8F1E9;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.order-header, .history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.order-status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.en-proceso {
+    background-color: #f0ad4e;
+    color: white;
+}
+
+.enviado {
+    background-color: #5bc0de;
+    color: white;
+}
+
+.entregado {
+    background-color: #5cb85c;
+    color: white;
+}
+
+.order-details, .history-details {
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .store-main {
+        grid-template-columns: 1fr;
+    }
+    
+    .filters {
+        position: static;
+    }
+}
+/* Estilos para el modal de cantidad */
+.quantity-modal-content {
+    max-width: 400px;
+}
+
+.quantity-product-info {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #8B6F47;
+    padding-bottom: 10px;
+}
+
+.modal-product-price {
+    font-weight: bold;
+    color: #8B6F47;
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+.quantity-selector {
+    margin: 20px 0;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.qty-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #8B6F47;
+}
+
+#product-quantity {
+    width: 60px;
+    height: 40px;
+    text-align: center;
+    margin: 0 10px;
+    font-size: 1.1rem;
+}
+
+.quantity-total {
+    text-align: right;
+    font-weight: bold;
+    margin: 15px 0;
+    font-size: 1.1rem;
+}
+
+.quantity-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.cancel-btn {
+    background-color: #8B6F47;
+    opacity: 0.8;
+    padding: 10px 20px;
+}
+
+.confirm-btn {
+    background-color: #4A7043;
+    padding: 10px 20px;
+}
+
+.cancel-btn:hover {
+    opacity: 1;
+}
+
+/* Contenedor principal centrado */
+.checkout-main {
+    width: 100%;
+    max-width: 100%;
+    padding: 40px 0;
+    background-color: #f8f1e9;
+    display: flex;
+    justify-content: center;
+}
+
+/* Contenedor interno de ancho controlado */
+.checkout-container {
+    width: 90%;
+    max-width: 800px; /* Ancho máximo más limitado */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Ajustes para los campos de la tarjeta */
+#credit-card-details {
+    padding: 25px;
+    background-color: #F8F1E9;
+    border-radius: 8px;
+    margin: 20px 0;
+    border: 1px solid #e0d5c1;
+}
+
+#credit-card-details .form-group {
+    margin-bottom: 25px;
+}
+
+#credit-card-details input {
+    padding: 14px;
+    font-size: 16px;
+    width: 100%;
+    border: 1px solid #8B6F47;
+}
+
+/* Mejorar el espaciado en la fecha de expiración y CVV */
+#credit-card-details .form-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Proporción 2:1 */
+    gap: 25px;
+}
+
+/* Ajustar el responsive */
+@media (max-width: 1100px) {
+    .checkout-container {
+        grid-template-columns: 2fr; /* Una columna en pantallas más pequeñas */
+    }
+}
+
+
+/* Aumentar el padding interno de los contenedores */
+/* Estilos para las secciones */
+.checkout-summary, 
+.checkout-form-container {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 40px;
+    margin-bottom: 40px;
+    width: 100%;
+    box-shadow: 0 5px 20px rgba(60, 47, 47, 0.1);
+}
+
+.checkout-summary h2,
+.checkout-form-container h2 {
+    font-size: 24px;
+    color: #3C2F2F;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #8B6F47;
+}
+
+.checkout-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #F5E6CC;
+}
+
+.checkout-item-name {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.checkout-total {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #F5E6CC;
+    border-radius: 10px;
+}
+
+.checkout-subtotal, 
+.checkout-shipping,
+.checkout-total-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.checkout-total-line {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed #8B6F47;
+}
+
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    color: #3C2F2F;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #e0d5c1;
+    border-radius: 8px;
+    background-color: #F8F1E9;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #8B6F47;
+}
+
+
+/* Estilos para métodos de pago */
+.payment-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.payment-method {
+    display: flex;
+    align-items: center;
+    background-color: #F8F1E9;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #e0d5c1;
+    transition: border-color 0.3s;
+    cursor: pointer;
+}
+
+.payment-method:hover {
+    border-color: #8B6F47;
+}
+
+.payment-method input[type="radio"] {
+    margin: 0;
+    margin-right: 15px;
+    width: auto; /* Importante: anula el ancho del 100% de los inputs genéricos */
+    cursor: pointer;
+}
+
+.payment-method label {
+    display: inline; /* Cambiar de block a inline */
+    margin: 0; /* Quitar márgenes que puedan desplazar la etiqueta */
+    font-size: 16px;
+    font-weight: 500;
+    color: #3C2F2F;
+    cursor: pointer;
+}
+
+/* Detalles de los métodos de pago */
+.payment-details {
+    background-color: #F8F1E9;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0 30px;
+    border: 2px solid #e0d5c1;
+}
+
+.payment-details p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Botones de acción */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    gap: 30px;
+}
+
+.cancel-checkout-btn,
+.confirm-order-btn {
+    padding: 18px 30px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    transition: background-color 0.3s;
+    min-width: 200px;
+}
+
+.cancel-checkout-btn {
+    background-color: #8B6F47;
+    color: #F8F1E9;
+    text-decoration: none;
+}
+
+.confirm-order-btn {
+    background-color: #4A7043;
+    color: #F8F1E9;
+    border: none;
+    cursor: pointer;
+}
+
+.cancel-checkout-btn:hover {
+    background-color: #6e5838;
+}
+
+.confirm-order-btn:hover {
+    background-color: #3a5a36;
+}
+
+@media (max-width: 768px) {
+    .checkout-summary, 
+    .checkout-form-container {
+        padding: 25px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .cancel-checkout-btn,
+    .confirm-order-btn {
+        width: 100%;
+    }
+}
+
+/* Estilos para la página de confirmación */
+.confirmation-main {
+    width: 90%;
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.confirmation-container {
+    background-color: #F5E6CC;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(60, 47, 47, 0.15);
+    text-align: center;
+}
+
+.confirmation-icon {
+    font-size: 80px;
+    color: #4A7043;
+    margin-bottom: 20px;
+}
+
+.order-info {
+    background-color: #F8F1E9;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.confirmation-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+

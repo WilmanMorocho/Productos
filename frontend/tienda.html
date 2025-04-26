@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda - Café Aroma</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Tienda Café Aroma</h1>
+        <nav class="main-nav">
+            <a href="home.html" class="nav-link">Inicio</a>
+            <a href="tienda.html" class="nav-link">Productos</a>
+            <a href="#" class="nav-link">Nosotros</a>
+            <div class="cart-container">
+                <button id="cart-btn" class="cart-btn">
+                    <span class="cart-icon">🛒</span>
+                    <span id="cart-count">0</span>
+                </button>
+            </div>
+            <div id="auth-buttons" class="auth-buttons">
+                <!-- Esto se llenará dinámicamente con JS -->
+            </div>
+        </nav>
+    </header>
+    
+    <main class="store-main">
+        <aside class="filters">
+            <h2>Filtros</h2>
+            <div class="filter-group">
+                <h3>Precio</h3>
+                <input type="range" id="price-range" min="0" max="50" value="50">
+                <div class="price-labels">
+                    <span>$0</span>
+                    <span id="price-value">$50</span>
+                </div>
+            </div>
+            <button id="apply-filters" class="client-btn">Aplicar Filtros</button>
+        </aside>
+        
+        <section class="products">
+            <h2>Nuestros Productos</h2>
+            <div id="products-grid" class="products-grid">
+                <!-- Los productos se cargarán aquí -->
+            </div>
+        </section>
+        
+        <!-- Modal para el carrito -->
+        <div id="cart-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Carrito de Compras</h2>
+                <div id="cart-items">
+                    <!-- Los items del carrito se cargarán aquí -->
+                </div>
+                <div class="cart-total">
+                    <strong>Total: $<span id="cart-total">0.00</span></strong>
+                </div>
+                <button id="checkout-btn" class="client-btn">Proceder al Pago</button>
+            </div>
+        </div>
+        
+        <!-- Modal para seleccionar cantidad -->
+        <div id="quantity-modal" class="modal">
+            <div class="modal-content quantity-modal-content">
+                <span class="close">&times;</span>
+                <h2>Añadir al Carrito</h2>
+                <div id="product-info" class="quantity-product-info">
+                    <!-- Información del producto -->
+                </div>
+                <div class="quantity-selector">
+                    <h3>Cantidad:</h3>
+                    <div class="quantity-controls">
+                        <button id="decrease-qty" class="qty-btn">-</button>
+                        <input type="number" id="product-quantity" value="1" min="1" max="99">
+                        <button id="increase-qty" class="qty-btn">+</button>
+                    </div>
+                </div>
+                <div class="quantity-total">
+                    Subtotal: $<span id="quantity-subtotal">0.00</span>
+                </div>
+                <div class="quantity-actions">
+                    <button id="cancel-add" class="cancel-btn">Cancelar</button>
+                    <button id="confirm-add" class="confirm-btn">Añadir al Carrito</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="js/auth.js"></script>
+    <script src="js/tienda.js"></script>
+</body>
+</html>

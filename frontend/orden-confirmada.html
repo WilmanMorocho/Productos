@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido Confirmado - Café Aroma</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Pedido Confirmado</h1>
+        <nav class="main-nav">
+            <a href="home.html" class="nav-link">Inicio</a>
+            <a href="tienda.html" class="nav-link">Tienda</a>
+            <div id="auth-buttons" class="auth-buttons">
+                <!-- Esto se llenará dinámicamente con JS -->
+            </div>
+        </nav>
+    </header>
+    
+    <main class="confirmation-main">
+        <div class="confirmation-container">
+            <div class="confirmation-icon">✓</div>
+            <h2>¡Gracias por tu compra!</h2>
+            <p>Tu pedido ha sido recibido y está siendo procesado.</p>
+            <div class="order-info">
+                <p>Número de Pedido: <strong id="order-id"></strong></p>
+                <p>Fecha: <span id="order-date"></span></p>
+                <p>Total: <span id="order-total"></span></p>
+            </div>
+            <p>Te hemos enviado un correo electrónico con los detalles de tu pedido.</p>
+            <div class="confirmation-actions">
+                <a href="tienda.html" class="client-btn">Seguir Comprando</a>
+                <a href="pedidos.html" class="client-btn">Ver Mis Pedidos</a>
+            </div>
+        </div>
+    </main>
+    
+    <script src="js/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtener ID de pedido de la URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const orderId = urlParams.get('id');
+            
+            if (orderId) {
+                document.getElementById('order-id').textContent = orderId;
+                
+                // Buscar detalles del pedido en localStorage
+                const orders = JSON.parse(localStorage.getItem('orders') || '[]');
+                const order = orders.find(o => o.id === orderId);
+                
+                if (order) {
+                    // Formatear fecha
+                    const orderDate = new Date(order.date);
+                    document.getElementById('order-date').textContent = orderDate.toLocaleDateString();
+                    
+                    // Mostrar total
+                    document.getElementById('order-total').textContent = `$${order.total.toFixed(2)}`;
+                }
+            }
+            
+            // Configuración de autenticación para la página
+            const authButtons = document.getElementById('auth-buttons');
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            const userRole = localStorage.getItem('userRole');
+            const username = localStorage.getItem('username');
+            
+            if (isLoggedIn) {
+                authButtons.innerHTML = `
+                    <span class="user-welcome">Hola, ${username || 'Usuario'}</span>
+                    <a href="${userRole === 'admin' ? 'admin.html' : 'cliente.html'}" class="auth-btn login">Mi Cuenta</a>
+                    <a href="#" id="nav-logout" class="auth-btn register">Cerrar Sesión</a>
+                `;
+                
+                document.getElementById('nav-logout')?.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    localStorage.removeItem('isLoggedIn');
+                    localStorage.removeItem('userRole');
+                    localStorage.removeItem('username');
+                    window.location.href = 'home.html';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

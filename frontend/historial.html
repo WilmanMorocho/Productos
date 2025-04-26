@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de Compras - Café Aroma</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Historial de Compras</h1>
+        <nav class="admin-nav">
+            <a href="cliente.html" class="nav-link">Volver al Panel</a>
+            <button id="logout-btn" class="logout-btn">Cerrar Sesión</button>
+        </nav>
+    </header>
+    
+    <main class="client-page-main">
+        <div class="page-container">
+            <h2>Compras Anteriores</h2>
+            
+            <div id="purchase-history">
+                <!-- El historial se cargará aquí -->
+            </div>
+            
+            <div id="no-history-message" class="message-box">
+                <p>No tienes compras anteriores.</p>
+                <a href="tienda.html" class="client-btn">Ir a la Tienda</a>
+            </div>
+        </div>
+    </main>
+    
+    <script src="js/auth.js"></script>
+    <script src="js/historial.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Tienda de Café</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Panel de Administración</h1>
+        <nav class="admin-nav">
+            <button id="logout-btn" class="logout-btn">Cerrar Sesión</button>
+        </nav>
+    </header>
+    
+    <main class="admin-main">
+        <div class="admin-actions">
+            <h2>Opciones de Administración</h2>
+            <div class="admin-buttons">
+                <a href="productos.html" class="admin-btn">Gestionar Productos</a>
+                <a href="#" class="admin-btn" id="new-admin-btn">Crear Nuevo Admin</a>
+                <a href="admin-users.html" class="admin-btn">Gestionar Usuarios</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="admin-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Crear Nuevo Administrador</h2>
+            <form id="new-admin-form">
+                <div class="form-group">
+                    <label for="new-username">Usuario:</label>
+                    <input type="text" id="new-username" required>
+                </div>
+                <div class="form-group">
+                    <label for="new-password">Contraseña:</label>
+                    <input type="password" id="new-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirmar Contraseña:</label>
+                    <input type="password" id="confirm-password" required>
+                </div>
+                <div id="admin-error" class="error-message"></div>
+                <button type="submit">Crear Administrador</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
